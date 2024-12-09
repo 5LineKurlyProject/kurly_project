@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import *
+from healthy.models import product, review
 
 #워드 클라우드 생성에 필요한 라이브러리 
 import matplotlib.pyplot as plt
