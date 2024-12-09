@@ -58,7 +58,7 @@
 <body>
     <div class="container my-5">
         <h1 class="mb-4 text-center">검색</h1>
-        <form method="get" action="{% url 'search_results' %}" class="d-flex justify-content-center">
+        <form method="get" action="{% url 'search_results_make' %}" class="d-flex justify-content-center">
             <div class="input-group search-bar w-75">
                 <input type="text" name="q" class="form-control" placeholder="검색어를 입력하세요." value="{{ query }}">
                 <button type="submit" class="btn px-4">검색</button>
@@ -73,7 +73,7 @@
                         <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.product_name }}" style="height: 200px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title">
-                                <a href="{% url 'product_reviews' product.id %}" class="text-decoration-none">
+                                <a href="{% url 'product_reviews_make' product.id %}" class="text-decoration-none">
                                     {{ product.product_name }}
                                 </a>
                             </h5>

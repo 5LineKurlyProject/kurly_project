@@ -45,7 +45,7 @@
 
         <div class="list-group">
             {% for product in products %}
-                <a href="{% url 'product_reviews' product.id %}" class="list-group-item list-group-item-action text-decoration-none text-dark">
+                <a href="{% url 'product_reviews_make' product.id %}" class="list-group-item list-group-item-action text-decoration-none text-dark">
                     <h5 class="mb-1">{{ product.product_name }}</h5>
                     <small class="text-muted">더 알아보려면 클릭하세요</small>
                 </a>
