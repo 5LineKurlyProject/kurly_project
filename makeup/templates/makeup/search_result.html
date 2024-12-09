@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색 결과</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #f9f9f9, #e9ecef);
+            font-family: 'Arial', sans-serif;
+        }
+        h2 {
+            font-weight: bold;
+            color: #343a40;
+        }
+        .list-group-item {
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            background: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .list-group-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            background: #f8f9fa;
+        }
+        .alert {
+            border: none;
+            background: #fff3cd;
+            color: #856404;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <h2 class="text-center mb-4">
+            <span class="text-primary">{{ query }}</span>에 대한 검색 결과입니다.
+        </h2>
+
+        <div class="list-group">
+            {% for product in products %}
+                <a href="{% url 'product_reviews' product.id %}" class="list-group-item list-group-item-action text-decoration-none text-dark">
+                    <h5 class="mb-1">{{ product.product_name }}</h5>
+                    <small class="text-muted">더 알아보려면 클릭하세요</small>
+                </a>
+            {% empty %}
+                <div class="alert text-center" role="alert">
+                    검색 결과가 없습니다. 다시 검색해보세요.
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
