@@ -21,6 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('health/', include('healthy.urls')),
     path('makeup/', include('makeup.urls')),
-    path('skincare/', include('skincare.urls'))
+    path('skincare/', include('skincare.urls')),
     path('luxury_beauty/', include('luxury_beauty.urls')),
 ]
