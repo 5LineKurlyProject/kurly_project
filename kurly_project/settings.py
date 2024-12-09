@@ -37,8 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "healthy.apps.HealthyConfig",
-    "skincare.apps.SkincareConfig"
+    "healthy.apps.HealthyConfig"
 ]
 
 MIDDLEWARE = [
