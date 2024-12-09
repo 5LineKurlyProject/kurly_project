@@ -1,7 +1,11 @@
 <h1>{{ product.product_name }} 리뷰</h1>
-<img src="{{ product.image_url }}" alt="{{ product.product_name }} 이미지">
+<br>
+<br>
+
+<img src="{{ product.image_url }}" alt="{{ product.product_name }} 이미지" style="max-height: 600px;">
 <!-- 상품 상세 페이지 템플릿 -->
-<img src="{% url 'product_reviews_wordcloud' product.product_id %}" alt="Word Cloud" />
+<img src="{% url 'product_reviews_wordcloud' product.product_id %}" alt="Word Cloud" style="max-height: 600px;"/>
+
 
 
 <!--
@@ -14,5 +18,3 @@
 </ul>
 -->
 
-
-<a href="{% url 'search' %}">뒤로 가기</a>

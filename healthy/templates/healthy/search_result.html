@@ -1,8 +1,4 @@
-<h1>검색 결과</h1>
-<form method="get" action="{% url 'search' %}">
-    <input type="text" name="q" placeholder="상품 검색" value="{{ query }}">
-    <button type="submit">검색</button>
-</form>
+<p><b>{{ query }}</b>에 대한 검색 결과입니다. </p>
 
 <ul>
     {% for product in products %}
