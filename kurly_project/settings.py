@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     "healthy.apps.HealthyConfig",
     "skincare.apps.SkincareConfig",
     'makeup',
-    'luxury_beauty'
+    'luxury_beauty',
 ]
 
 MIDDLEWARE = [
