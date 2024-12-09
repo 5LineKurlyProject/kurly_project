@@ -12,6 +12,7 @@ import base64
 import tkinter
 import os
 from django.conf import settings
+from healthy.models import Product, Category, Review
 
 # CSV 파일 경로
 csv_path = 'data/kurly_test_5.csv'
@@ -21,9 +22,12 @@ hannanum = Hannanum()
 korean_font_path = "C:/Users/ekfrl/AppData/Local/Microsoft/Windows/Fonts/HakgyoansimSonagiR.ttf"
 
 def index(request):
-    print("index @@@@@@@@@@@@@@@@@@@@@@@@")
     # 카테고리 직접 정의
-    categories = ['luxury_beauty', '메이크업', '스킨케어', '헤어케어', '건강식품']
+    # categories = ['luxury_beauty', '메이크업', '스킨케어', '헤어케어', '건강식품']
+    categories = Category.objects.all()
+    print("categories: ")
+    for category in categories:
+        print(category.category_name)
 
     return render(request, 'luxury_beauty/index.html', {'categories': categories})
 

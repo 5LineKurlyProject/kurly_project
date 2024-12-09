@@ -1,4 +1,4 @@
-{% comment %} {% extends "luxury_beauty/base.html" %}
+{% extends "luxury_beauty/base.html" %}
 {% block content %}
 <h2>카테고리 선택</h2>
 <ul>
@@ -6,8 +6,8 @@
     <li><a href="{% url 'product_reviews' category=category %}">{{ category }}</a></li>
     {% endfor %}
 </ul>
-{% endblock %} {% endcomment %}
-<!DOCTYPE html>
+{% endblock %}
+{% comment %} <!DOCTYPE html>
 <html>
 <head>
     <title>마켓컬리 리뷰 시각화</title>
@@ -16,4 +16,4 @@
     <h1>마켓컬리 리뷰 시각화</h1>
     <p>Welcome to visualization app!</p>
 </body>
-</html>
+</html> {% endcomment %}
