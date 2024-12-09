@@ -1,0 +1,21 @@
+<br>
+<h1 style="margin-top: 40px; margin-right: 40px; margin-left: 40px">검색 </h1>
+<form method="get" action="{% url 'search' %}" style= "margin-left: 40px">
+    <input type="text" name="q" placeholder="검색어를 입력하세요." value="{{ query }}">
+    <button type="submit">검색</button>
+</form>
+
+<br><br><br>
+<h1 style="margin: 40px">추천 상품</h1>
+<br>
+<div class="row" style="display: flex; justify-content: center; align-items: center;">
+    {% for product in top_products %}
+        <div class="ton_product" style="text-align: center; margin: 10px">
+            <img src="{{ product.image_url }}" alt="{{ product.product_name }}" style="display: inline-block; width: 200px; height: 200px;">
+            <a href="{% url 'product_reviews' product.product_id %}">
+                <h5>{{ product.product_name }}</h5>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+

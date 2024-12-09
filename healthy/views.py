@@ -12,16 +12,18 @@ import numpy as np
 from PIL import Image
 
 # 제품 검색 페이지(본 페이지)
-def search(reqeust):
-    query = reqeust.GET.get('q', '') #검색어 가져오기 
+def main_page(request):
+    top_products = product.objects.all().order_by('product_id')[:4]
+    return render(request, 'healthy/main_page.html', {'top_products': top_products})
+
+def search(request):
+    query = request.GET.get('q', '') #검색어 가져오기 
     selected_product = ''
-    print('입력단어:', query)
     if query:
         selected_product = product.objects.filter(product_name__contains=query) 
-        print(selected_product)
     
 
-    return render(reqeust, 'healthy/search_result.html', {'products': selected_product, 'query':query})
+    return render(request, 'healthy/search_result.html', {'products': selected_product, 'query':query})
 
 
 
