@@ -23,4 +23,5 @@ urlpatterns = [
     path('makeup/', include('makeup.urls')),
     path('skincare/', include('skincare.urls')),
     path('luxury_beauty/', include('luxury_beauty.urls')),
+    path('haircare_test/', include('haircare_test.urls'))
 ]

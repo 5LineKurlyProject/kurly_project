@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     "skincare.apps.SkincareConfig",
     'makeup',
     'luxury_beauty',
+    
+    'haircare_test'
+    
 ]
 
 MIDDLEWARE = [
