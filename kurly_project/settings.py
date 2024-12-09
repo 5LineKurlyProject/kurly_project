@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "healthy.apps.HealthyConfig",
     "skincare.apps.SkincareConfig",
-    'makeup'
-    'luxury_beauty',
+    'makeup',
+    'luxury_beauty'
 ]
 
 MIDDLEWARE = [
