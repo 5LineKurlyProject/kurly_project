@@ -1,0 +1,20 @@
+{% comment %} {% extends "luxury_beauty/base.html" %}
+{% block content %} {% endcomment %}
+<h2>{{ category }} 카테고리</h2>
+<!-- 검색 -->
+<form action="{% url 'search_result' %}" method="get">
+    <input type="hidden" name="category" value="{{ category }}">
+    <input type="text" name="query" placeholder="상품명을 입력하세요">
+    <button type="submit">검색</button>
+</form>
+<div class="products">
+    {% for product in products %}
+    <div class="product">
+        <h3>{{ product.name }}</h3>
+        {% comment %} <img src="data:image/png;base64,{{ product.image }}" alt="{{ product.name }}"> {% endcomment %}
+        <img src="data:image/png;base64,{{ product.image }}" alt="상품 이미지">
+        <img src="data:image/png;base64,{{ product.wordcloud }}" alt="워드클라우드">
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
