@@ -15,7 +15,7 @@ from io import BytesIO
 
 
 def main_page(request):
-    top_products = Product.objects.all().order_by('id')[:4]
+    top_products = Product.objects.all().order_by('id')[:6]
     return render(request, 'luxury_beauty/main_page.html', {'top_products': top_products})
 
 def product_reviews(request, product_id):

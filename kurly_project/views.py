@@ -15,6 +15,6 @@ def main_page(request):
     makeup_product = MakeupProduct.objects.first()
     # haircare_product = HaircareProduct.objects.first()
     
-    img_url = {'luxury':luxury_product.image_url, 'skin':luxury_product.image_url, 'health':health_product.image_url, 'makeup':makeup_product.image_url}
+    img_url = {'luxury':luxury_product.image_url, 'skin':skincare_product.image_url, 'health':health_product.image_url, 'makeup':makeup_product.image_url}
     
     return render(request, 'main.html', {'img_url': img_url})  # 템플릿 렌더링
