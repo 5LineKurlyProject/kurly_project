@@ -1,0 +1,17 @@
+<h1>검색 결과</h1>
+<form method="get" action="{% url 'search' %}">
+    <input type="text" name="q" placeholder="상품 검색" value="{{ query }}">
+    <button type="submit">검색</button>
+</form>
+
+<ul>
+    {% for product in products %}
+        <li>
+            <a href="{% url 'product_reviews' product.product_id %}">
+                {{ product.product_name }}
+            </a>
+        </li>
+    {% empty %}
+        <!--<li>검색 결과가 없습니다.</li>-->
+    {% endfor %}
+</ul>
