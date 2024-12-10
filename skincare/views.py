@@ -53,11 +53,11 @@ def product_reviews_wordcloud(request, product_id):
     counter = Counter(nouns)
     
     #마스크 이미지
-    mask_image = np.array(Image.open("skincare\statics\imanges\masking_image.png"))
+    mask_image = np.array(Image.open("skincare\statics\images\masking_image.png"))
 
     # 워드 클라우드 생성
     wordcloud = WordCloud(
-                        font_path="healthy/statics/fonts/CAFE24OHSQUARE.TTF",
+                        font_path="skincare/statics/fonts/CAFE24OHSQUARE.TTF",
                         mask=mask_image,
                         width=800,
                         height=400,
